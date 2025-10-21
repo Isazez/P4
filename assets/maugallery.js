@@ -119,7 +119,9 @@
         .attr("src", element.attr("src"));
       $(`#${lightboxId}`).modal("toggle");
     },
-    prevImage() {
+    
+    // ajout du paramètre dans les parenthèses pour une meilleure lisibilité et cohérence (bonne pratique), même si non utilisé dans la fonction
+    prevImage(lightboxId) {
       let activeImage = null;
       $("img.gallery-item").each(function() {
         if ($(this).attr("src") === $(".lightboxImage").attr("src")) {
@@ -145,20 +147,26 @@
           }
         });
       }
-      let index = 0,
-        next = null;
+      let index = 0; //point virgule à la place de la virgule
+       // next = null; -> suppression car inutilisé
 
       $(imagesCollection).each(function(i) {
         if ($(activeImage).attr("src") === $(this).attr("src")) {
           index = i ;
         }
       });
-      next =
-        imagesCollection[index] ||
-        imagesCollection[imagesCollection.length - 1];
-      $(".lightboxImage").attr("src", $(next).attr("src"));
+      // next = imagesCollection[index] || imagesCollection[imagesCollection.length - 1];
+      // $(".lightboxImage").attr("src", $(next).attr("src"));
+      // ne fait rien si on est au premier élément, or à l'ouverture on est toujours au premier élément donc on boucle à la fin. Le || (opérateur "OU") ne sert à rien ici, car imagesCollection[index] existe toujours (c’est l’image actuelle).
+
+      let prevIndex = index > 0 ? index - 1 : imagesCollection.length - 1;
+      $(".lightboxImage").attr("src", $(imagesCollection[prevIndex]).attr("src"));
+      // On déclare une variable pour stocker l’index de l’image précédente. Si on n’est pas sur la première image, on prend l’index précédent (index - 1). Si on est sur la première image (index = 0), on "boucle" à la dernière image (imagesCollection.length - 1). On récupère le src (chemin) de l’image à l’index prevIndex. On met à jour l’image affichée dans la modale avec ce nouveau src.
+      
     },
-    nextImage() {
+
+    // ajout du paramètre dans les parenthèses pour une meilleure lisibilité et cohérence (bonne pratique), même si non utilisé dans la fonction
+    nextImage(lightboxId) {
       let activeImage = null;
       $("img.gallery-item").each(function() {
         if ($(this).attr("src") === $(".lightboxImage").attr("src")) {
@@ -184,16 +192,22 @@
           }
         });
       }
-      let index = 0,
-        next = null;
+      let index = 0; //point virgule à la place de la virgule
+      // next = null; -> suppression car inutilisé
 
       $(imagesCollection).each(function(i) {
         if ($(activeImage).attr("src") === $(this).attr("src")) {
           index = i;
         }
       });
-      next = imagesCollection[index] || imagesCollection[0];
-      $(".lightboxImage").attr("src", $(next).attr("src"));
+      // next = imagesCollection[index] || imagesCollection[0];
+      //$(".lightboxImage").attr("src", $(next).attr("src"));
+      // Même problème que pour prevImage : on ne boucle pas à nouveau au début quand on est à la fin.
+
+      let nextIndex = index < imagesCollection.length - 1 ? index + 1 : 0;
+      $(".lightboxImage").attr("src", $(imagesCollection[nextIndex]).attr("src"));
+      // On déclare une variable pour stocker l’index de l’image suivante. On vérifie si l’index actuel est inférieur à l’index de la dernière image (c’est-à-dire qu’on n’est pas sur la dernière image). Si on n’est pas sur la dernière image, on prend l’index suivant (index + 1). Si on est sur la dernière image, on "boucle" à la première image (0). On récupère le src de l’image à l’index nextIndex. On met à jour l’image affichée dans la modale avec ce nouveau src.
+      
     },
     createLightBox(gallery, lightboxId, navigation) {
       gallery.append(`<div class="modal fade" id="${
@@ -239,8 +253,12 @@
       if ($(this).hasClass("active-tag")) {
         return;
       }
-      $(".active-tag").removeClass("active active-tag");
-      $(this).addClass("active-tag");
+      $(".tags-bar span").removeClass("active active-tag");
+      // Si aucun filtre n’était sélectionné (par exemple au premier clic), ou si la classe n’était pas correctement appliquée, rien ne se passait. La classe .active-tag pouvait rester sur plusieurs éléments, ou ne pas être supprimée du tout. Cibler tous les elements span de la barre de tags permet de s’assurer que la classe est bien supprimée partout avant d’être appliquée au nouvel élément cliqué.
+      //$(".active-tag").removeClass("active active-tag");
+      $(this).addClass("active active-tag");
+      // il y a besoin des deux classes, la classe "active" pour le style bootstrap, et "active-tag" qui permet au JS de savoir quel filtre est selectionné.
+      // $(this).addClass("active-tag");
 
       var tag = $(this).data("images-toggle");
 

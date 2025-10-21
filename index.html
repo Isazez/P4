@@ -2,22 +2,114 @@
 <html lang="fr">
 	
 <head>
-	<title> Nica Carducci - Photographe </title>
-	<meta name="description" content="Site professionnel de la photographe Nina Carducci en France. Shooting photo, Retouches, Album photos, portrait, mariage, entreprise, concert.">
+	<title> Nica Carducci - Photographe à Bordeaux. Portrait photo, photographie de concert, photographie de mariage, photographie d'entreprise, ...</title>
+
+	<meta name="description" content="Site professionnel de la photographe Nina Carducci à Bordeaux, France. Shooting photo, Retouches, Album photos, portrait, mariage, entreprise, concert.">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<!--Open graph fb et insta-->
+	<meta property="og:site_name" content="Nina Carducci" />
+	<meta property="og:type" content="website" />
+	<meta property="og:locale" content="fr_FR" />
+	<meta property="og:url" content="https://www.ninacarducci.fr" />
+	<meta property="og:title" content="Nina Carducci - Photographe professionnelle" />
+	<meta property="og:description" content="Photographe à Bordeaux. Shooting photo, Retouches, Album photos, portrait, mariage, entreprise, concert." />
+	<meta property="og:image" content="https://www.ninacarducci.fr/assets/images/nina-carducci_photographe-card.webp" />
+	<meta property="og:image:width" content="1200"> <meta property="og:image:height" content="628">
+	<!--twitter card-->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@ninacarducci" />
+	<meta name="twitter:title" content="Nina Carducci" />
+	<meta name="twitter:description" content="Photographe à Bordeaux. Shooting photo, Retouches, Album photos, portrait, mariage, entreprise, concert." />
+	<meta name="twitter:image" content="https://www.ninacarducci.fr/assets/images/nina-carducci_photographe-card.webp" />
+	<meta name="twitter:url" content="https://www.ninacarducci.fr" />
+
 	<link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css">
 	<link rel="stylesheet" href="./assets/style.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap"
-		rel="stylesheet">
-	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap" rel="stylesheet">
+
 	<script defer src="./assets/bootstrap/bootstrap.bundle.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
 		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 	<script defer src="./assets/maugallery.js"></script>
 	<script defer src="./assets/scripts.js"></script>
+	<!--Referencement schema.org-->
+	<script type="application/ld+json">
+		{
+		"@context": "https://schema.org",
+		"@type": "LocalBusiness",
+		"@id": "https://www.ninacarducci.fr#photographe",
+		"name": "Nina Carducci",
+		"image": "https://www.ninacarducci.fr/assets/images/nina.webp",
+		"url": "https://www.ninacarducci.fr",
+		"telephone": "+33556677889",
+		"priceRange": "€€",
+		"description": "Photographe professionnelle à Bordeaux : portraits, mariages, entreprises, concerts et retouches photo. Séances personnalisées et albums photo sur mesure.",
+		"address": {
+			"@type": "PostalAddress",
+			"streetAddress": "68 avenue Alsace-Lorraine",
+			"postalCode": "33200",
+			"addressLocality": "Bordeaux",
+			"addressCountry": "FR"
+		},
+		"geo": {
+			"@type": "GeoCoordinates",
+			"latitude": 44.8466,
+			"longitude": -0.5808
+		},
+		"openingHoursSpecification": [{
+			"@type": "OpeningHoursSpecification",
+			"dayOfWeek": [
+			"Monday",
+			"Tuesday",
+			"Wednesday",
+			"Thursday",
+			"Friday"
+			],
+			"opens": "10:00",
+			"closes": "19:00"
+		}],
+		"sameAs": [
+			"https://www.instagram.com/ninacarducci.photo/"
+		],
+		"makesOffer": [
+			{
+			"@type": "Offer",
+			"name": "Shooting photo",
+			"price": "350",
+			"priceCurrency": "EUR",
+			"description": "Séance photo en Île-de-France, matériel et déplacement inclus (demi-journée)."
+			},
+			{
+			"@type": "Offer",
+			"name": "Retouches photo",
+			"price": "50",
+			"priceCurrency": "EUR",
+			"description": "Retouche professionnelle avec 2 allers-retours inclus."
+			},
+			{
+			"@type": "Offer",
+			"name": "Album photo personnalisé",
+			"price": "400",
+			"priceCurrency": "EUR",
+			"description": "Album A4 de 30 pages recto-verso, mise en page sur mesure."
+			}
+		],
+		"founder": {
+			"@type": "Person",
+			"name": "Nina Carducci",
+			"jobTitle": "Photographe professionnelle",
+			"image": "https://www.ninacarducci.fr/assets/images/nina.webp"",
+			"sameAs": "https://www.instagram.com/ninacarducci.photo/"
+		},
+		"areaServed": {
+			"@type": "Place",
+			"name": "Bordeaux et Île-de-France"
+		}
+		}
+	</script>
 </head>
 
 <body>
@@ -25,7 +117,7 @@
 	<main>
 
 		<header class="top-header">
-			<h3 class="name">Nina Carducci</h3>
+			<h1 class="name">Nina Carducci</h1>
 			<nav class="nav">
 				<ul>
 					<li><a href="#about">À propos</a></li>
@@ -64,15 +156,15 @@
 							class="d-block w-100" alt="photographie de couple s'embrassant lors d'un mariage au milieu des applaudissements des invités">
 					</div>
 				</div>
-				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+				<button class="carousel-control-prev" type="button" aria-label="prev" data-bs-target="#carouselExampleIndicators"
 					data-bs-slide="prev">
 					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Previous</span>
+					<span class="display-none">Previous</span>
 				</button>
-				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+				<button class="carousel-control-next" type="button" aria-label="next" data-bs-target="#carouselExampleIndicators"
 					data-bs-slide="next">
 					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Next</span>
+					<span class="display-none">Next</span>
 				</button>
 			</article>
 		</section>
@@ -82,10 +174,11 @@
 				<img loading="lazy" src="./assets/images/nina.webp" alt="Autoportrait de la photographe Nina Carducci">
 			</aside>
 			<article id="about-me">
-				<h3 class="about-me__title">A propos de moi</h3>
-				<h4 class="about-me__introduction">Devenir photographe était pour moi une évidence. Comme si j’y étais
-					prédestiné. Saisir un moment, une émotion, une situation, un endroit, une lumière et les rendre
-					immortels, voilà ce qui me fait vibrer.</h6>
+				<h2 class="about-me__title">A propos de moi</h2>
+				<!-- correction orthographe prédestinéE-->
+				<h3 class="about-me__introduction">Devenir photographe était pour moi une évidence. Comme si j’y étais
+					prédestinée. Saisir un moment, une émotion, une situation, un endroit, une lumière et les rendre
+					immortels, voilà ce qui me fait vibrer.</h3>
 				<p>Nous passons notre vie à chercher le bonheur, et lorsque nous y touchons, nous n’avons qu’une envie : le
 					figer au travers de photographies pour le savourer avec les personnes qui sont importantes à nos yeux,
 					ou le partager au plus grand nombre.
@@ -96,7 +189,7 @@
 		</section>
 
 		<section id="gallery">
-			<h3 class="title">Portfolio</h3>
+			<h2 class="title">Portfolio</h2>
 			<article class="container py-3">
 				<div class="gallery" style="display: none">
 					<img loading="lazy" data-gallery-tag="Concert" class="gallery-item"
@@ -123,10 +216,10 @@
 			<aside class="quote">
 				<figure>
 					<blockquote>
-						<h1 class="quote__text">Un portrait n’est pas une ressemblance. Dès lors qu’une émotion ou qu’un
+						<h2 class="quote__text">Un portrait n’est pas une ressemblance. Dès lors qu’une émotion ou qu’un
 							fait est traduit en photo, il cesse d’être un fait pour devenir une opinion. L’inexactitude
 							n’existe pas en photographie. Toutes les photos sont exactes. Aucune d’elles n’est la vérité.
-						</h1>
+						</h2>
 					</blockquote>
 					<figcaption class="quote__author">- Richard Avedon</figcaption>
 				</figure>
@@ -177,8 +270,8 @@
 		<section class="quote">
 			<figure>
 				<blockquote>
-					<h1 class="quote__text">De manière inconsciente, je crois, je guette un regard, une expression, des
-						traits ou une nostalgie capable de résumer ou plus exactement de révéler une vie</h1>
+					<h2 class="quote__text">De manière inconsciente, je crois, je guette un regard, une expression, des
+						traits ou une nostalgie capable de résumer ou plus exactement de révéler une vie</h2>
 				</blockquote>
 				<figcaption class="quote__author">- Richard Avedon</figcaption>
 			</figure>
